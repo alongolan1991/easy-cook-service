@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>easy-cook Documantation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Easy-cook API</span>
+    </nav>
+    <p class="method">METHOD:&emsp;POST</p>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Parameters</th>
+                <th scope="col">Retuen value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">createUser</th>
+                <td>userName, password, email</td>
+                <td>NONE</td>
+            </tr>
+            <tr>
+                <th scope="row">addFavorites</th>
+                <td>userID, recipeID</td>
+                <td>NONE</td>
+            </tr>
+            <tr>
+                <th scope="row">deleteFavorites</th>
+                <td>userID, recipeID</td>
+                <td>NONE</td>
+            </tr>
+            <tr>
+                <th scope="row">setStatistics</th>
+                <td>userID, category</td>
+                <td>NONE</td>
+            </tr>
+            <tr>
+                <th scope="row">getFavorites</th>
+                <td>userID</td>
+                <td>JSON</td>
+            </tr>
+            <tr>
+                <th scope="row">getUserRecipesByStatistics</th>
+                <td>userID</td>
+                <td>JSON</td>
+            </tr>
+            <tr>
+                <th scope="row">getRecipeById</th>
+                <td>recipeID</td>
+                <td>JSON</td>
+            </tr>
+            <tr>
+                <th scope="row">getRecipesByCategory</th>
+                <td>category</td>
+                <td>JSON</td>
+            </tr>
+            <tr>
+                <th scope="row">createComment</th>
+                <td>userName, rate, content, recipeID</td>
+                <td>NONE</td>
+            </tr>
+            <tr>
+                <th scope="row">deleteComment</th>
+                <td>recipeID, commentID, userName</td>
+                <td>NONE</td>
+            </tr>
+            <tr>
+                <th scope="row">deleteRecipe</th>
+                <td>recipeID</td>
+                <td>NONE</td>
+            </tr>
+            <tr>
+                <th scope="row">setUserBlockList</th>
+                <td>userID, gluten, lactose, peanuts, diet, fast</td>
+                <td>NONE</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="card text-white bg-dark mb-3" style="max-width: 70%">
+        <div class="card-header">Recipe schema</div>
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+                [<br>
+                    &emsp;{<br>
+    &emsp;&emsp;"_id": {<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;"$oid":&emsp;"5b1517fae7179a6034c6b61c"<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;},<br>
+    &emsp;&emsp;"category":&emsp;"chicken",<br>
+    &emsp;&emsp;"gluten":&emsp;"0",<br>
+    &emsp;&emsp;"lactose":&emsp;"1",<br>
+    &emsp;&emsp;"peanuts":&emsp;"1",<br>
+    &emsp;&emsp;"name":&emsp;"Chicken And Asparagus Pasta",<br>
+    &emsp;&emsp;"image":&emsp;"media/chicken/Chicken And Asparagus Pasta/image/Chicken And Asparagus Pasta.jpg",<br>
+    &emsp;&emsp;"preparation_time":&emsp;35,<br>
+    &emsp;&emsp;"calories":&emsp;450,<br>
+    &emsp;&emsp;"ingredients": [<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"1 lb (455 g) penne pasta",<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"¼ cup (50 mL) olive oil, plus 2 tablespoons",<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"4 cloves garlic cloves, diced"<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;],<br>
+    &emsp;&emsp;"preparation_method": [<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"In a pot, cook pasta according to package instructions, drain, then set aside.",<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"In the same pot, heat 2 tablespoons olive oil and sauté 2 garlic cloves.",<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"Enjoy!"<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;],<br>
+    &emsp;&emsp;"video_steps": [<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"vid1",<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"vid2",<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"vid3"<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;],<br>
+    &emsp;&emsp;"comments": [<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"5b1e422c11cfd8ae389bbd27",<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"5b1e422c11cfd8ae389bbd29"<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;]<br>
+    &emsp;}<br>
+                ]
+            </p>
+        </div>
+</body>
+</html>
