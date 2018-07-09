@@ -50,8 +50,12 @@ app.post('/setUserBlockList', (req, res) =>{
 app.post('/addFavorites', (req, res) => {
   userCtl.addFavorites(req.body.userID, req.body.recipeID)
   .then((result, error) =>{
-    if(result){
-      res.status(200).json({"message": "recipe added to favorites"});
+    console.log(result);
+    if(result == 'recipe already exsits in favorites'){
+      res.status(200).json({"message": result});
+    }
+    else{
+      res.status(200).json({"message": "Recipe added to favorites"});
     }
   });
 });

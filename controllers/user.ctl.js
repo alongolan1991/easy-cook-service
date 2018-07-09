@@ -146,19 +146,39 @@ break;
 
 function addFavorites(user_id, recipe_id){
   return new promise((resolve, reject) => {
-    User.update({"_id": user_id}, {$push: {"favorites": recipe_id}},
-    (err) => {
-      if(err)
-      reject(`err:${err}`);
-      else{
-        resolve(`Updated document: ${User}`);
+    var temp = false;
+    User.findOne({"_id": user_id}, (err, rec) => {
+      if(err){
+        reject(err);
       }
-    }
-  );
+      else{
+        for(let i in rec.favorites){
+          if(recipe_id == rec.favorites[i])
+              temp = true;
+        }
+      }
+
+      if(temp == false){
+        User.update({"_id": user_id}, {$push: {"favorites": recipe_id}},
+        (err) => {
+          if(err)
+          reject(`err:${err}`);
+          else{
+            resolve(`Updated document: ${User}`);
+          }
+        }
+      );
+      }
+
+      else{
+        resolve('recipe already exsits in favorites');
+      }
+
+
 });
 
+});
 }
-
 
 function deleteFavorites(user_id, recipe_id){
   return new promise((resolve, reject) => {
